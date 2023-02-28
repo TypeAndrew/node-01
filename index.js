@@ -1,32 +1,38 @@
-import {contacts} from './contacts'
-
-
+const contacts = require('../contacts');
+//import contacts from '../contacts.js';
 
 // index.js
-const argv = require("yargs").argv;
 
+//const { argv } = yargs(process.argv);
+const yargs = require('yargs/yargs')
+const { hideBin } = require('yargs/helpers')
+const argv = yargs(hideBin(process.argv)).argv
+console.log('-----');
+console.log(argv);
 // TODO: рефакторить
-function invokeAction({ action, id, name, email, phone }) {
-  switch (action) {
-    case "list":
-      // ...
-      break;
+function invokeAction({ _ }) {
+    switch (_[0]) {
+        case 'list':
+            contacts.listContacts();
+            break;
 
-    case "get":
-      // ... id
-      break;
+        case "get":
+            // ... id
+            break;
 
-    case "add":
-      // ... name email phone
-      break;
+        case "add":
+            // ... name email phone
+            break;
 
-    case "remove":
-      // ... id
-      break;
+        case "remove":
+            // ... id
+            break;
 
-    default:
-      console.warn("\x1B[31m Unknown action type!");
-  }
+        default:
+            console.log(_[0]);
+            console.warn("\x1B[31m Unknown action type!");
+    }
 }
 
+console.log(argv);
 invokeAction(argv);
