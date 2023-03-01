@@ -1,4 +1,4 @@
-const contacts = require('../contacts');
+const contacts = require('./contacts');
 //import contacts from '../contacts.js';
 
 // index.js
@@ -8,16 +8,19 @@ const yargs = require('yargs/yargs')
 const { hideBin } = require('yargs/helpers')
 const argv = yargs(hideBin(process.argv)).argv
 console.log('-----');
-console.log(argv);
+//console.log(argv);
 // TODO: рефакторить
-function invokeAction({ _ }) {
+async function invokeAction({ _ }) {
     switch (_[0]) {
         case 'list':
-            contacts.listContacts();
+            console.log('--get--');
+            console.log(await contacts.listContacts());
+
             break;
 
         case "get":
-            // ... id
+            console.log('--get--');
+            console.log(await contacts.getContactById(_[1]));
             break;
 
         case "add":
