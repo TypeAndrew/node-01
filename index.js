@@ -24,11 +24,17 @@ async function invokeAction({ _ }) {
             break;
 
         case "add":
-            // ... name email phone
+            console.log('--add--');
+            let name = _[1];
+            let email = _[2];
+            let phone = _[3];
+            console.log(await contacts.addContact(name,email,phone));
             break;
 
         case "remove":
-            // ... id
+            console.log('--del--');
+            
+            console.log(await contacts.removeContact(_[1]));
             break;
 
         default:
