@@ -13,6 +13,7 @@
         "brace-expansion": "^1.1.11",
         "braces": "^3.0.2",
         "chokidar": "^3.5.3",
+        "colors": "^1.4.0",
         "concat-map": "^0.0.1",
         "debug": "^3.2.7",
         "fill-range": "^7.0.1",
@@ -40,8 +41,8 @@
     },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "node --inspect index.js",
-        "dev": "nodemon --inspect index.js"
+        "start": "node  index.js",
+        "dev": "nodemon  index.js"
     },
     "repository": {
         "type": "git",
@@ -55,5 +56,4 @@
     },
     "homepage": "https://github.com/TypeAndrew/node-01#readme",
     "description": ""
-
 }

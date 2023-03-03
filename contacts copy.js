@@ -1,8 +1,7 @@
 const fs = require('fs').promises;
 const path = require('path');
-//const logger = require('./module');
-//const path = './db/contacts.json';
-const contactsPath = path.dirname('./db/contacts.json') + '/' + path.basename('./db/contacts.json');
+
+const contactsPath = path.join('db','contacts_data');
 
 async function saveFile(file) {
     return await fs.writeFile(contactsPath, JSON.stringify(file))
